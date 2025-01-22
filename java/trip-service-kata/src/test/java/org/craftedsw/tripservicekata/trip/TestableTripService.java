@@ -5,8 +5,15 @@ import org.craftedsw.tripservicekata.user.UserSession;
 
 public class TestableTripService extends TripService {
 
+    private User user;
+
+    public TestableTripService(User user) {
+        this.user = user;
+    }
+
+
     @Override
     protected User getLoggedUser() {
-        return new User();
+        return user;
     }
 }
